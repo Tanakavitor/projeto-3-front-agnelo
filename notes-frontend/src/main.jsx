@@ -1,12 +1,27 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 import './index.css'
-import Login from '../components/Login'
 import Cadastro from '../components/Cadastro'
+import App from './App'
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+  },
+  {
+    path: "Cadastro",
+    element: <Cadastro />,
+  },
+]);
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Cadastro />
+    <RouterProvider router={router} />
   </React.StrictMode>,
 )
