@@ -8,6 +8,7 @@ import './index.css'
 import Cadastro from '../components/Cadastro'
 import App from './App'
 import Notes from '../components/Notes'
+import MyNotes from '../components/MyNotes'
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
   {
     path: "All_Notes",
     element: <Notes />,
+  },
+  {
+    path: "My_Notes",
+    element: <MyNotes />,
   },
 ]);
 

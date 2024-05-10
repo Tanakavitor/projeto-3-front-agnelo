@@ -5,7 +5,7 @@ export default function MyNotes() {
     const [MyNotes, setMyNotes] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:8080/api/my_notes', {
+        axios.get('http://127.0.0.1:8000/api/my_notes/', {
             headers: {
                 'Authorization': `Token ${localStorage.getItem('token')}`
             }
