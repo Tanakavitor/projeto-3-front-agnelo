@@ -2,10 +2,12 @@ import { Link } from "react-router-dom";
 import { useState } from 'react';
 import axios from 'axios';
 import './style.css';
+import { useLoaderData, useNavigate } from "react-router-dom";
 
 export default function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
     const login = (event) => {
         event.preventDefault();
@@ -15,10 +17,12 @@ export default function Login() {
             password: password
         };
 
-        axios.post('http://localhost:8000/api/token/', data)
+        axios.post('http://127.0.0.1:8000/api/token/', data)
         .then((response) => {
             const token = response.data.token;
             localStorage.setItem('token', token);
+            console.log(response.data.token);
+            navigate('/All_Notes');
         })
         .catch((error) => {
             console.error("There was an error!", error);

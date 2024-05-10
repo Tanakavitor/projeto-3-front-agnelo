@@ -7,6 +7,7 @@ import {
 import './index.css'
 import Cadastro from '../components/Cadastro'
 import App from './App'
+import Notes from '../components/Notes'
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
   {
     path: "Cadastro",
     element: <Cadastro />,
+  },
+  {
+    path: "All_Notes",
+    element: <Notes />,
   },
 ]);
 

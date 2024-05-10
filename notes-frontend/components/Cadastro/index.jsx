@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { useLoaderData, useNavigate } from "react-router-dom";
 
 export default function Cadastro() {
 
     const [username, setUsername] = useState('');
     const [email , setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
     
     const cadastrar = (event) => {
         event.preventDefault();
@@ -16,9 +18,10 @@ export default function Cadastro() {
             password: password
         };
 
-        axios.post('http://localhost:8000/api/users/', data)
+        axios.post('http://127.0.0.1:8000/api/users/', data)
         .then((response) => {
             console.log(response);
+            navigate('/');
         })
         .catch((error) => {
             console.error("There was an error!", error);
