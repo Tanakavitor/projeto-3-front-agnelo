@@ -4,11 +4,12 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 
 
 export default function Note() {
+  const [content, setContent] = useState('');
   const [AllNotes, setAllNotes] = useState([]);
   const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/all_notes', {
+        axios.get('http://127.0.0.1:8000/api/all_notes/', {
           headers: {
               'Authorization': `Token ${localStorage.getItem('token')}`
           }
@@ -20,14 +21,14 @@ export default function Note() {
 
       let createNote = (event) => {
         event.preventDefault();
-        axios.post('http://127.0.0.1:8000/api/create_note/', {
+        axios.post('http://127.0.0.1:8000/api/create_note/', {content: `${content}`}, {
           headers: {
               'Authorization': `Token ${localStorage.getItem('token')}`
           }
       })
       .then((response) => {
-        navigate('/All_Notes');
-          
+        console.log("atualizando a pagina")
+        window.location.reload();
       })
     };
 
@@ -38,10 +39,13 @@ export default function Note() {
             <h1>Create Note</h1>
             <label>
               Content:
-              <input type="text" name="content" />
+              <input type="text" name="content" onChange={(event) => setContent(event.target.value)} />
             </label>
             <button type="submit">Post</button>
           </form>
+        </div>
+        <div>
+            <button onClick={() => navigate('/My_Notes')}>My Notes</button>
         </div>
         <div>
             <h1>All Notes</h1>
@@ -52,6 +56,5 @@ export default function Note() {
             </ul>
         </div>
       </>
-        
     )
   }
