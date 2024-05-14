@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useLoaderData, useNavigate } from "react-router-dom";
+import './style.css';
+
 
 export default function MyNotes() {
     const [MyNotes, setMyNotes] = useState([]);
@@ -19,7 +21,8 @@ export default function MyNotes() {
 
     return (
         <>
-        <div>
+         <div className="login-wrapper">
+        <div className='wraper'>
             <h1>My Notes</h1>
             <ul>
                 {MyNotes.map((note) => (
@@ -29,6 +32,7 @@ export default function MyNotes() {
         </div>
         <div>
             <button onClick={() => navigate('/All_Notes')}>Return to Home Page</button>
+        </div>
         </div>
         </>
     )

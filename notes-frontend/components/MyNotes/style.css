@@ -1,0 +1,47 @@
+/* MyNotes.css */
+.login-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: column;
+    height: 100vh;
+    background-color: #15202B;
+    color: white;
+}
+.wraper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #15202B;
+    color: white;
+}
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    border-bottom: 1px solid #38444D;
+    padding: 10px 0;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #1DA1F2;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0C84D2;
+}
