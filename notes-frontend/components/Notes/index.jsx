@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useLoaderData, useNavigate } from "react-router-dom";
+import './style.css';
 
 
 export default function Note() {
@@ -34,7 +35,8 @@ export default function Note() {
 
     return (
       <>
-        <div>
+      <div className='divisao'>
+        <div className='div-form'>
           <form onSubmit={createNote}>
             <h1>Create Note</h1>
             <label>
@@ -47,7 +49,7 @@ export default function Note() {
         <div>
             <button onClick={() => navigate('/My_Notes')}>My Notes</button>
         </div>
-        <div>
+        <div className='all_notes'>
             <h1>All Notes</h1>
             <ul>
                 {AllNotes.map((note) => (
@@ -55,6 +57,7 @@ export default function Note() {
                 ))}
             </ul>
         </div>
+      </div>
       </>
     )
   }
