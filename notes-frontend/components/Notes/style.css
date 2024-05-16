@@ -3,7 +3,34 @@ body {
     color: #FFFFFF;
     font-family: 'Helvetica Neue', sans-serif;
   }
-  
+  .divisao-note{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  @keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: rotate(0deg);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(360deg);
+    }
+}
+  .card {
+      width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #192734;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; /* Change this from center to flex-start */
+      justify-content: center;
+      animation: fadeIn 0.4s ease-in;
+  }
   .div-form {
     width: 600px;
     margin: 0 auto;
@@ -38,12 +65,7 @@ body {
   }
   
   .all_notes {
-    width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #192734;
-    border-radius: 15px;
-    display: flex;
+
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -62,7 +84,6 @@ body {
     padding: 10px;
     border-bottom: 1px solid #38444D;
   }
-  
   button {
     padding: 10px;
     background-color: #1DA1F2;
@@ -77,3 +98,25 @@ body {
     flex-direction: column;
     align-items: center;
   } 
+  .username {
+    color: #1DA1F2;
+    font-size: 20px;
+    justify-content: flex-start;
+  }
+  .button2 {
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 10px 0;
+    background: linear-gradient(to right, #1DA1F2, #0D8BF2); /* Add a gradient background */
+    color: white;
+    padding: 20px 40px;
+    transition: all 0.5s ease;
+    transform-style: preserve-3d;
+  }
+  
+  .button2:hover {
+    background: linear-gradient(to right, #065cdc, #1b2226); /* Change the gradient background on hover */
+    color: #fff;
+    transform: scale(1.2) rotate(0deg);
+  }

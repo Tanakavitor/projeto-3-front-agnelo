@@ -21,19 +21,19 @@ export default function MyNotes() {
 
     return (
         <>
-         <div className="login-wrapper">
-        <div className='wraper'>
-            <h1>My Notes</h1>
-            <ul>
-                {MyNotes.map((note) => (
-                    <li key={note.id}>{note.content}</li>
-                ))}
-            </ul>
-        </div>
-        <div>
-            <button onClick={() => navigate('/All_Notes')}>Return to Home Page</button>
-        </div>
-        </div>
+          <div className="divisao-note2">
+            <h1 className="h33">My Notes</h1>
+            {MyNotes.map((note) => (
+                <div className='card' key={note.id}>
+                    <ul className="all_notes">
+                        <p className='content2'>{note.content}</p>
+                    </ul>
+                </div>
+            ))}
+            <div>
+                <button className="button2" onClick={() => navigate('/All_Notes')}>Return to Home Page</button>
+            </div>
+          </div>
         </>
     )
 }

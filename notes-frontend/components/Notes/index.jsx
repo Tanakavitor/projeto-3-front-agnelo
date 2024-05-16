@@ -16,7 +16,9 @@ export default function Note() {
           }
       })
         .then((response) => {
-            setAllNotes(response.data)
+          setAllNotes(response.data.reverse())
+
+            console.log(response.data)
         })
     }, [])
 
@@ -43,7 +45,7 @@ export default function Note() {
               Content:
               <input type="text" name="content" onChange={(event) => setContent(event.target.value)} />
             </label>
-            <button type="submit">Post</button>
+            <button className="button2" type="submit">Post</button>
           </form>
         </div>
         <div>
@@ -52,9 +54,14 @@ export default function Note() {
         <div className='all_notes'>
             <h1>All Notes</h1>
             <ul>
-                {AllNotes.map((note) => (
-                    <li key={note.id}>{note.content}</li>
-                ))}
+            {AllNotes.map((note) => (
+          <ul className='divisao-note' key={note.id}>
+            <li className='card'>
+              <p className='username'>@{note.user}</p>
+              <p className='content'>{note.content}</p>
+            </li>
+          </ul>
+        ))}
             </ul>
         </div>
       </div>
